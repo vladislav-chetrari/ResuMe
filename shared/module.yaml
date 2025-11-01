@@ -2,10 +2,10 @@ product:
   type: lib
   platforms: [jvm, android, iosSimulatorArm64, iosArm64, iosX64]
 
-dependencies:
-  - $compose.foundation: exported
-  - $compose.material3: exported
+apply:
+  - ../template/compose.module-template.yaml
+  - ../template/di-compose.module-template.yaml
 
-settings:
-  compose:
-    enabled: true
+dependencies:
+  - ../core/logging
+  - ../feature/launch

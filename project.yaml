@@ -3,3 +3,5 @@ modules:
   - ios-app
   - jvm-app
   - shared
+  - core/logging
+  - feature/launch
