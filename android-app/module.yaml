@@ -2,8 +2,11 @@ product: android/app
 
 dependencies:
   - ../shared
-  - androidx.activity:activity-compose:1.7.2
+  - $libs.androidx.activity.compose
 
 settings:
+  android:
+    namespace: com.vchetrari.resume
+    minSdk: 28
   compose: enabled
   junit: junit-4
