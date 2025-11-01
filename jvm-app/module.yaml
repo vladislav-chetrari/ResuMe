@@ -1,5 +1,8 @@
 product: jvm/app
 
+apply:
+  - ../template/di.module-template.yaml
+
 dependencies:
   - ../shared
   - $compose.desktop.currentOs

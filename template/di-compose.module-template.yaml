@@ -1,0 +1,4 @@
+dependencies:
+  - $libs.koin.core
+  - $libs.koin.compose
+  - $libs.koin.compose.viewmodel

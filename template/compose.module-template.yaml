@@ -1,0 +1,9 @@
+settings:
+  compose: enabled
+  kotlin:
+    serialization: enabled
+
+dependencies:
+  - $compose.foundation
+  - $compose.material3
+  - $libs.navigation
