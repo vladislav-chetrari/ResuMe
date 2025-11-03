@@ -9,3 +9,4 @@ apply:
 dependencies:
   - ../core/logging
   - ../feature/launch
+  - ../feature/home

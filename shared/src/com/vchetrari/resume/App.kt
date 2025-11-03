@@ -5,6 +5,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.vchetrari.resume.feature.home.HomeScreen
+import com.vchetrari.resume.feature.home.homeModule
 import com.vchetrari.resume.feature.launch.LaunchScreen
 import com.vchetrari.resume.feature.launch.launchModule
 import org.koin.compose.KoinApplication
@@ -15,6 +17,7 @@ fun App() {
         application = {
             modules(
                 launchModule,
+                homeModule,
             )
         }
     ) {
@@ -31,6 +34,18 @@ private fun AppRouting() {
         navController = navController,
         startDestination = AppRoute.Launch,
     ) {
-        composable<AppRoute.Launch> { LaunchScreen() }
+        composable<AppRoute.Launch> {
+            LaunchScreen(
+                onResult = { result ->
+                    if (result.isSuccess) navController.navigate(AppRoute.Home) {
+                        launchSingleTop = true
+                    } else {
+                        //TODO check how to action with errors
+                        navController.popBackStack()
+                    }
+                },
+            )
+        }
+        composable<AppRoute.Home> { HomeScreen() }
     }
 }
