@@ -12,16 +12,13 @@ import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun LaunchScreen(
-    onResult: (LaunchResult) -> Unit = {},
+    onResult: (Result<Unit>) -> Unit = {},
 ) {
     val viewModel = koinViewModel<LaunchViewModel>()
     val uiState by viewModel.uiState.collectAsState()
     val result = uiState.result
     if (result != null) {
-        onResult(
-            if (result.isSuccess) LaunchResult.Success
-            else LaunchResult.Failure
-        )
+        onResult(result)
         return
     }
     LaunchScreen(uiState)
