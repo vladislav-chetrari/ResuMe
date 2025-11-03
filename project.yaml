@@ -5,3 +5,4 @@ modules:
   - shared
   - core/logging
   - feature/launch
+  - feature/home
