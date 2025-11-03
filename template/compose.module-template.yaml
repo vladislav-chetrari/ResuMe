@@ -4,6 +4,6 @@ settings:
     serialization: enabled
 
 dependencies:
-  - $compose.foundation
-  - $compose.material3
+  - $libs.compose.foundation
+  - $libs.compose.material3
   - $libs.navigation
